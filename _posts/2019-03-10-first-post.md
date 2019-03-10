@@ -1,7 +1,7 @@
 ---
 layout : posts
 title : "첫 번째" 
-date : 2019-03-10
+date : 2019-03-10 00:55:00+0900
 category : Admin
 tags : Test
 --- 

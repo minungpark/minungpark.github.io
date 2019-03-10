@@ -1,7 +1,7 @@
 ---
 layout : posts
 title : "HTML 공부 : 테이블 태그"
-date : 2019-03-10
+date : 2019-03-10 17:59:00+0900
 category : HTML
 tags : HTML
 ---
