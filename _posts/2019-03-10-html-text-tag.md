@@ -3,7 +3,6 @@ layout : posts
 title : "HTML 공부 : 텍스트 태그"
 date : 2019-03-10 17:58:00+0900
 category : HTML
-comments : true
 tags : HTML
 ---
 HTML 텍스트 태그를 실습한 내용입니다.

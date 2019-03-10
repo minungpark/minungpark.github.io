@@ -282,7 +282,7 @@ compress_html:
 comments:
   provider: "disqus"
   disqus:
-    shortname: dev-park-blog
+    shortname: "dev-park-blog"
 
 # Defaults
 defaults:
