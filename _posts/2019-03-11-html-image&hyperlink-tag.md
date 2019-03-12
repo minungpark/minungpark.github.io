@@ -1,9 +1,9 @@
 ---
-layout : posts
 title : "HTML 공부 : 이미지&하이퍼링크"
 date : 2019-03-11 16:58:00+0900
 category : HTML
 tags : HTML
+toc: true
 ---
 HTML 이미지&하이퍼링크를 실습한 내용입니다.
 
