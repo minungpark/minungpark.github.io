@@ -1,9 +1,8 @@
 ---
 title : "첫 번째" 
 last_modified_at: 2019-03-10T12:04:24+0900
-category : Admin
-tags : Test
-toc: true
+category : Blog
+tags : Blog
 --- 
 
 ## hello my page!
