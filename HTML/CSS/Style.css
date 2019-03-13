@@ -1,0 +1,28 @@
+.greentext-32
+{
+    color:green; /* 글자색 */
+    font-size:32px; /* 폰트 사이즈 */
+}
+
+.purpletext-32
+{
+    color:purple; /* 글자색 */
+    font-size:32px; /* 폰트 사이즈 */
+}
+
+.darkbluetext-16 /* 클래스 선택자 */
+{
+    color:darkblue; /* 글자색 */
+    font-size:16px; /* 폰트 사이즈 */
+}
+
+#libluetext /* id 선택자 */
+{
+    color:blue;
+    list-style-type:square;
+}
+
+* pre
+{
+    font-weight: bold;
+}
