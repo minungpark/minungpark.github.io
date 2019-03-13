@@ -1,369 +1,371 @@
 <!doctype html>
 <meta charset="utf-8">
-<head>
-    <title>폼 만들기</title>
-</head>
-<body>
-    <h1>&ltform&gt태그 속성(폼안에 폼은 안된다.)</h1>
-    <dl>
-        <dt><strong>method 속성 : 사용자가 입력한 내용들을 서버 쪽 프로그램으로 어떻게 넘겨줄지 지정</strong></dt>
-        <dd>get : 주소 표시줄에 사용자가 입력한 내용이 그대로 드러남. 256~2,096byte까지 전송 가능</dd>
-        <dd>post : 사용자의 입력을 표준 입력(standard input)방식으로 넘겨줌. 입력길이에 제한이 없고 주소창에 입력값이 드러나지 않음</dd>
-    </dl>
-    <dl>
-        <dt><strong>action 속성 : &ltform&gt태그의 내용을 서버로 넘겼을 때 내용을 처리해 줄 서버상의 프로그램을 지정</strong></dt>
-    </dl>
+<html>
+    <head>
+        <title>폼 만들기</title>
+    </head>
+    <body>
+        <h1>&ltform&gt태그 속성(폼안에 폼은 안된다.)</h1>
+        <dl>
+            <dt><strong>method 속성 : 사용자가 입력한 내용들을 서버 쪽 프로그램으로 어떻게 넘겨줄지 지정</strong></dt>
+            <dd>get : 주소 표시줄에 사용자가 입력한 내용이 그대로 드러남. 256~2,096byte까지 전송 가능</dd>
+            <dd>post : 사용자의 입력을 표준 입력(standard input)방식으로 넘겨줌. 입력길이에 제한이 없고 주소창에 입력값이 드러나지 않음</dd>
+        </dl>
+        <dl>
+            <dt><strong>action 속성 : &ltform&gt태그의 내용을 서버로 넘겼을 때 내용을 처리해 줄 서버상의 프로그램을 지정</strong></dt>
+        </dl>
 
-    <h2>&ltlabel&gt태그와 속성</h2>
-    <ul>
-        <li>폼 요소에 레이블(텍스트)을 붙이는 태그</li>
-        <li>라디오 버튼이나 체크 박스에서 텍스트 부분을 클리해도 선택가능.</li>
-        <li>for 속성 : label의 연결을 위해 특정 값을 지정.</li>
-    </ul>
+        <h2>&ltlabel&gt태그와 속성</h2>
+        <ul>
+            <li>폼 요소에 레이블(텍스트)을 붙이는 태그</li>
+            <li>라디오 버튼이나 체크 박스에서 텍스트 부분을 클리해도 선택가능.</li>
+            <li>for 속성 : label의 연결을 위해 특정 값을 지정.</li>
+        </ul>
 
-    <h2>&ltfieldset&gt태그</h2>
-    <ul>
-        <li>폼 요소를 그룹으로 묶는 태그</li>
-    </ul>
+        <h2>&ltfieldset&gt태그</h2>
+        <ul>
+            <li>폼 요소를 그룹으로 묶는 태그</li>
+        </ul>
 
-    <h2>&ltlegend&gt태그</h2>
-    <ul>
-        <li>그룹으로 묶는 구역에 제목을 붙이는 태그</li>
-    </ul>
+        <h2>&ltlegend&gt태그</h2>
+        <ul>
+            <li>그룹으로 묶는 구역에 제목을 붙이는 태그</li>
+        </ul>
 
-    <h2>&ltinput&gt태그와 속성</h2>
-    <ul>
-        <li>사용자가 입력하는 부분</li>
-        <li>title 속성 : 해당 부분에 마우스 커서를 올리고 대기하면, 추가적인 정보 표시.</li>
-        <li>type 속성 : 입력하는 내용의 종류</li>
-            <ul type="square">
-                <li>hidden : 화면 상의 폼에는 보이지 않는다.<br>
-                    폼을 서버로 전송할 때 서버로 함께 전송된다.</li>
-                <li>text : 한 줄짜리 텍스트 입력 필드.<br>
-                    주로 아이디나 이름, 주소 등 텍스트 입력</li>
-                <li>password : 비밀번호 입력 필드.<br>
-                    입력내용이 '*'나 '·'로 표시</li>
-                <li><strong>text, password 필드 속성</strong></li>
-                    <ul>
-                        <li>name : 텍스트 필드를 구별할 수 있도록 이름을 붙힘</li>
-                        <li>size : 텍스트 필드의 길이 지정. 화면에 몇 글자가 보일지 지정</li>
-                        <li>value : text 필드에서만 존재. 텍스트 필드 부분안에 표시될 내용. 없으면 빈칸.</li>
-                        <li>maxlength : 텍스트 필드에 입력할 수 있는 최대 문자 개수 지정.</li>
-                        <li>mixlength : 입력해야 할 최소 글자.</li>
-                    </ul>
-                <li>search : 검색 필드. 검색 창에 x 표시가 되어 검색어 삭제 쉬움</li>
-                <li>email : 메일 주소 입력 필드. 메일 주소 형식 자동 체크</li>
-                <li>url : 웹 주소 필드. "http://" 로 시작하는 사이트 주소 입력</li>
-                <li>tel : 전화번호 입력 필드. 사용자 입력을 체크하지는 않음.</li>
-                <li>number : 숫자 입력 필드. 브라우저에 따라 스핀 박스로 표시</li>
-                <li>range : 숫자 입력 필드. 슬라이드 막대로 숫자 입력.</li>
-                <li><strong>number, range 필드 속성</strong></li>
-                    <ul>
-                        <li>min : 최소값</li>
-                        <li>max : 최대값</li>
-                        <li>value : 기본 값</li>
-                        <li>step : 바뀌는 수의 크기</li>
-                    </ul>
-                <li>radio : 여러 항목 중 하나만 선택할 때</li>
-                <li>checkbox : 여러 항목 중 둘 이상을 선택할 때</li>
-                <li><strong>radio, checkbox 필드 속성</strong></li>
-                    <ul>
-                        <li>name : 라디오 버튼이나, 체크박스를 구분하기 위해 이름 지정.<br>
-                            라디오 버튼은 관련 있는 그룹끼리는 name 속성 값을 똑같이 만듬.</li>
-                        <li>value : 선택한 라이도 버튼이나 체크박스를 서버로 알려 줄 때 넘길 값 지정. 필수 속성.</li>
-                        <li>checked : 라디오 버튼의 항목들 중 기본으로 선택해 놓을 항목이 있다는 사용.</li>
-                    </ul>
-                <li>color : 색상 표에서 색상 선택</li>
-                <li>date : 날짜 선택 "yyyy-mm-dd"형식.</li>
-                <li>month : 월과 연도 선택 "yyyy-mm"</li>
-                <li>week : 주와 연도 선택</li>
-                <li>time, datetime-local : 시간입력</li>
-                <li><strong>time, datetime-local 필드 속성</strong></li>
-                    <ul>
-                        <li>min : 날짜나 시간의 최솟값 ex time)min="20:00" ex datetime-local)min="2000-10-06T22:22:55"</li>
-                        <li>max : 날짜나 시간의 최댓값 ex time)max="22:00" ex datetime-local)max="2014-11-16T21:25:33"</li>
-                        <li>step : 날짜나 시간 조절 단위 ex)step="300"(5분)</li>
-                        <li>value : 화면에 표시할 초기값 지정. time일 경우, 시간은 00:00~25:59로 입력.<br>
-                            datetime 이나 datetime-local일 경우, 날짜 다음에 T를 쓰고 24시간제로 시간을 지정.</li>
-                    </ul>
-                <li>submit : 폼 전송 버튼. 사용자 입력 내용을 서버로 전송. value 속성을 이용해 버튼 표시 내용 지정</li>
-                <li>reset : 사용자 입력 내용 전부 삭제. value 속성을 이용해 버튼 표시 내용 지정</li>
-                <li>image : submit 버튼 대신 이미지 삽입.</li>
-            </ul>
-        <li>id 속성 : 여러 번 사용된 폼 요소를 구분하기 위해 사용</li>
-            <ul type="square">
-                <li>&ltlabel&gt태그를 이용해 캡션을 붙일 수 있다.</li>
-                <li>CSS를 이용해 각 요소마다 다른 형태로 꾸밀 수 있다.</li>
-            </ul>
-        <li>autofocus 속성 : 페이지를 불러오자마자 원하는 폼 요소에 마우스 커서 표시</li>
-        <li>placeholder 속성 : 입력란에 표시하는 힌트. 필드 클릭시 사라짐.</li>
-        <li>readonly 속성 : 내용을 보기만 하고 입력하지 못하게 함.</li>
-        <li>reqired 속성 : 필수 필드 체크. 입력하지 않으면 오류.</li>
-        <li>list 속성 : &ltdatalist&gt태그의 id 에 적용한 값을 이용하여 사용할 데이터 목록 지정</li>
-    </ul>
+        <h2>&ltinput&gt태그와 속성</h2>
+        <ul>
+            <li>사용자가 입력하는 부분</li>
+            <li>title 속성 : 해당 부분에 마우스 커서를 올리고 대기하면, 추가적인 정보 표시.</li>
+            <li>type 속성 : 입력하는 내용의 종류</li>
+                <ul type="square">
+                    <li>hidden : 화면 상의 폼에는 보이지 않는다.<br>
+                        폼을 서버로 전송할 때 서버로 함께 전송된다.</li>
+                    <li>text : 한 줄짜리 텍스트 입력 필드.<br>
+                        주로 아이디나 이름, 주소 등 텍스트 입력</li>
+                    <li>password : 비밀번호 입력 필드.<br>
+                        입력내용이 '*'나 '·'로 표시</li>
+                    <li><strong>text, password 필드 속성</strong></li>
+                        <ul>
+                            <li>name : 텍스트 필드를 구별할 수 있도록 이름을 붙힘</li>
+                            <li>size : 텍스트 필드의 길이 지정. 화면에 몇 글자가 보일지 지정</li>
+                            <li>value : text 필드에서만 존재. 텍스트 필드 부분안에 표시될 내용. 없으면 빈칸.</li>
+                            <li>maxlength : 텍스트 필드에 입력할 수 있는 최대 문자 개수 지정.</li>
+                            <li>mixlength : 입력해야 할 최소 글자.</li>
+                        </ul>
+                    <li>search : 검색 필드. 검색 창에 x 표시가 되어 검색어 삭제 쉬움</li>
+                    <li>email : 메일 주소 입력 필드. 메일 주소 형식 자동 체크</li>
+                    <li>url : 웹 주소 필드. "http://" 로 시작하는 사이트 주소 입력</li>
+                    <li>tel : 전화번호 입력 필드. 사용자 입력을 체크하지는 않음.</li>
+                    <li>number : 숫자 입력 필드. 브라우저에 따라 스핀 박스로 표시</li>
+                    <li>range : 숫자 입력 필드. 슬라이드 막대로 숫자 입력.</li>
+                    <li><strong>number, range 필드 속성</strong></li>
+                        <ul>
+                            <li>min : 최소값</li>
+                            <li>max : 최대값</li>
+                            <li>value : 기본 값</li>
+                            <li>step : 바뀌는 수의 크기</li>
+                        </ul>
+                    <li>radio : 여러 항목 중 하나만 선택할 때</li>
+                    <li>checkbox : 여러 항목 중 둘 이상을 선택할 때</li>
+                    <li><strong>radio, checkbox 필드 속성</strong></li>
+                        <ul>
+                            <li>name : 라디오 버튼이나, 체크박스를 구분하기 위해 이름 지정.<br>
+                                라디오 버튼은 관련 있는 그룹끼리는 name 속성 값을 똑같이 만듬.</li>
+                            <li>value : 선택한 라이도 버튼이나 체크박스를 서버로 알려 줄 때 넘길 값 지정. 필수 속성.</li>
+                            <li>checked : 라디오 버튼의 항목들 중 기본으로 선택해 놓을 항목이 있다는 사용.</li>
+                        </ul>
+                    <li>color : 색상 표에서 색상 선택</li>
+                    <li>date : 날짜 선택 "yyyy-mm-dd"형식.</li>
+                    <li>month : 월과 연도 선택 "yyyy-mm"</li>
+                    <li>week : 주와 연도 선택</li>
+                    <li>time, datetime-local : 시간입력</li>
+                    <li><strong>time, datetime-local 필드 속성</strong></li>
+                        <ul>
+                            <li>min : 날짜나 시간의 최솟값 ex time)min="20:00" ex datetime-local)min="2000-10-06T22:22:55"</li>
+                            <li>max : 날짜나 시간의 최댓값 ex time)max="22:00" ex datetime-local)max="2014-11-16T21:25:33"</li>
+                            <li>step : 날짜나 시간 조절 단위 ex)step="300"(5분)</li>
+                            <li>value : 화면에 표시할 초기값 지정. time일 경우, 시간은 00:00~25:59로 입력.<br>
+                                datetime 이나 datetime-local일 경우, 날짜 다음에 T를 쓰고 24시간제로 시간을 지정.</li>
+                        </ul>
+                    <li>submit : 폼 전송 버튼. 사용자 입력 내용을 서버로 전송. value 속성을 이용해 버튼 표시 내용 지정</li>
+                    <li>reset : 사용자 입력 내용 전부 삭제. value 속성을 이용해 버튼 표시 내용 지정</li>
+                    <li>image : submit 버튼 대신 이미지 삽입.</li>
+                </ul>
+            <li>id 속성 : 여러 번 사용된 폼 요소를 구분하기 위해 사용</li>
+                <ul type="square">
+                    <li>&ltlabel&gt태그를 이용해 캡션을 붙일 수 있다.</li>
+                    <li>CSS를 이용해 각 요소마다 다른 형태로 꾸밀 수 있다.</li>
+                </ul>
+            <li>autofocus 속성 : 페이지를 불러오자마자 원하는 폼 요소에 마우스 커서 표시</li>
+            <li>placeholder 속성 : 입력란에 표시하는 힌트. 필드 클릭시 사라짐.</li>
+            <li>readonly 속성 : 내용을 보기만 하고 입력하지 못하게 함.</li>
+            <li>reqired 속성 : 필수 필드 체크. 입력하지 않으면 오류.</li>
+            <li>list 속성 : &ltdatalist&gt태그의 id 에 적용한 값을 이용하여 사용할 데이터 목록 지정</li>
+        </ul>
 
-    <h2>&ltdatalist&gt태그</h2>
-    <ul>
-        <li>데이터 목록에 제시한 값 중에서 선택하면 그 값이 자동으로 텍스트 필드에 입력됨.</li>
-        <li>데이터 목록에 id를 이용해 이름을 붙이고, &ltinput&gt태그의 list 속성에 데이터 목록 id를 지정</li>
-    </ul>
+        <h2>&ltdatalist&gt태그</h2>
+        <ul>
+            <li>데이터 목록에 제시한 값 중에서 선택하면 그 값이 자동으로 텍스트 필드에 입력됨.</li>
+            <li>데이터 목록에 id를 이용해 이름을 붙이고, &ltinput&gt태그의 list 속성에 데이터 목록 id를 지정</li>
+        </ul>
 
-    <h2>&ltselect&gt, &ltoptgroup&gt태그</h2>
-    <ul>
-        <li>여러 옵션 중에서 선택 - 드롭다운 메뉴</li>
-        <li>공간을 최소한으로 사용하면서 여러 옵션 표시 가능</li>
-        <li><strong>&ltselect&gt 태그 속성</strong></li>
-            <ul>
-                <li>size 속성 : 화면에 표시될 드롭다운 메뉴의 항목 개수 지정</li>
-                <li>multiple 속성 : 브라우저 화면에 여러 개의 옵션이 함께 표시.<br>
-                    Ctrl 키를 누른 상태로 드롭다운 메뉴에 있는 여러 항목 선택 가능.</li>
-            </ul>
-        <li><strong>&ltoption&gt 태그 속성</strong></li>
-            <ul>
-                <li>value 속성 : 옵션을 선택했을 때 서버로 넘겨질 값 지정.</li>
-                <li>selected 속성 : 화면에 표시될 때 기본으로 선택되어 있는 옵션 지정.</li>
-                <li>label 속성 : 사용자를 위해 브라우저에 표시할 레이블. 따로 지정하지 않을 경우 value값을 사용.</li>
-            </ul>
-    </ul>
+        <h2>&ltselect&gt, &ltoptgroup&gt태그</h2>
+        <ul>
+            <li>여러 옵션 중에서 선택 - 드롭다운 메뉴</li>
+            <li>공간을 최소한으로 사용하면서 여러 옵션 표시 가능</li>
+            <li><strong>&ltselect&gt 태그 속성</strong></li>
+                <ul>
+                    <li>size 속성 : 화면에 표시될 드롭다운 메뉴의 항목 개수 지정</li>
+                    <li>multiple 속성 : 브라우저 화면에 여러 개의 옵션이 함께 표시.<br>
+                        Ctrl 키를 누른 상태로 드롭다운 메뉴에 있는 여러 항목 선택 가능.</li>
+                </ul>
+            <li><strong>&ltoption&gt 태그 속성</strong></li>
+                <ul>
+                    <li>value 속성 : 옵션을 선택했을 때 서버로 넘겨질 값 지정.</li>
+                    <li>selected 속성 : 화면에 표시될 때 기본으로 선택되어 있는 옵션 지정.</li>
+                    <li>label 속성 : 사용자를 위해 브라우저에 표시할 레이블. 따로 지정하지 않을 경우 value값을 사용.</li>
+                </ul>
+        </ul>
 
-    <h2>&ltoption&gt태그</h2>
-    <ul>
-        <li>option의 여러 항목을 그룹으로 묶을 때 사용</li>
-        <li>label 속성을 사용해 그룹 제목을 붙임.</li>
-    </ul>
+        <h2>&ltoption&gt태그</h2>
+        <ul>
+            <li>option의 여러 항목을 그룹으로 묶을 때 사용</li>
+            <li>label 속성을 사용해 그룹 제목을 붙임.</li>
+        </ul>
 
-    <h2>&lttextarea&gt태그</h2>
-    <ul>
-        <li>텍스트 영역 - 여러 줄의 텍스트 입력</li>
-        <li><strong>&lttextarea&gt태그 속성</strong></li>
-            <ul>
-                <li>name 속성 : 다른 폼 요소와 구분하기 위해 텍스트 영역의 이름 지정.</li>
-                <li>clos 속성 : 텍스트 영역의 가로 너비를 문자 단위로 지정.</li>
-                <li>rows 속성 : 텍스트 영역의 세로 길이를 줄 단위로 지정.</li>
-            </ul>
-    </ul>
+        <h2>&lttextarea&gt태그</h2>
+        <ul>
+            <li>텍스트 영역 - 여러 줄의 텍스트 입력</li>
+            <li><strong>&lttextarea&gt태그 속성</strong></li>
+                <ul>
+                    <li>name 속성 : 다른 폼 요소와 구분하기 위해 텍스트 영역의 이름 지정.</li>
+                    <li>clos 속성 : 텍스트 영역의 가로 너비를 문자 단위로 지정.</li>
+                    <li>rows 속성 : 텍스트 영역의 세로 길이를 줄 단위로 지정.</li>
+                </ul>
+        </ul>
 
-    <h2>&ltbutton&gt태그</h2>
-    <ul>
-        <li>다양한 형태의 버튼 삽입.</li>
-        <li>화면 낭독기에서 버튼임을 정확히 전달할 수 있음.</li>
-        <li>CSS를 이용해 원하는 형태로 꾸밀 수 있음</li>
-        <li><strong>&ltbutton&gt태그 속성</strong></li>
-            <ul>
-                <li>submit 속성 : 폼을 서버로 전송.</li>
-                <li>reset 속성 : 폼에 입력한 모든 내용 초기화.</li>
-                <li>button 속성 : 버튼 형태만 만들 뿐 자체 기능은 없음.</li>
-            </ul>
-    </ul>
+        <h2>&ltbutton&gt태그</h2>
+        <ul>
+            <li>다양한 형태의 버튼 삽입.</li>
+            <li>화면 낭독기에서 버튼임을 정확히 전달할 수 있음.</li>
+            <li>CSS를 이용해 원하는 형태로 꾸밀 수 있음</li>
+            <li><strong>&ltbutton&gt태그 속성</strong></li>
+                <ul>
+                    <li>submit 속성 : 폼을 서버로 전송.</li>
+                    <li>reset 속성 : 폼에 입력한 모든 내용 초기화.</li>
+                    <li>button 속성 : 버튼 형태만 만들 뿐 자체 기능은 없음.</li>
+                </ul>
+        </ul>
 
-    <h2>&ltoutput&gt태그</h2>
-    <ul>
-        <li>계산 결과를 브라우저에 표시.</li>
-        <li>브라우저 화면에 다르게 표시되는 것은 아니나,<br>
-            일반 텍스트가 아니라 계산의 결과값이라는 것을 웹 브라우저가 정확히 인식할 수 있음.</li>
+        <h2>&ltoutput&gt태그</h2>
+        <ul>
+            <li>계산 결과를 브라우저에 표시.</li>
+            <li>브라우저 화면에 다르게 표시되는 것은 아니나,<br>
+                일반 텍스트가 아니라 계산의 결과값이라는 것을 웹 브라우저가 정확히 인식할 수 있음.</li>
 
-    </ul>
+        </ul>
 
-    <h2>&ltprogress&gt태그</h2>
-    <ul>
-        <li>작업 진행 상태를 브라우저에 표시.</li>
-        <li><strong>&ltprogress&gt태그 속성</strong></li>
-            <ul>
-                <li>value 속성 : 작업 진행 상태를 나타내며, 부동 소수점으로 표현.<br>
-                    이 값은 0보다 크거나 같고 max 값보다 적거나 같아야 함.<br>
-                    만약 max 값이 지정되지 않았다면 이 값은 1.0보다 작아야 함.</li>
-                <li>max 속성 : 작업이 완료되려면 얼마나 많은 작업을 해야 하는지 부동소수점으로 표현.<br>
-                    이 값은 0보다 커야 함.</li>
-            </ul>  
-    </ul>
+        <h2>&ltprogress&gt태그</h2>
+        <ul>
+            <li>작업 진행 상태를 브라우저에 표시.</li>
+            <li><strong>&ltprogress&gt태그 속성</strong></li>
+                <ul>
+                    <li>value 속성 : 작업 진행 상태를 나타내며, 부동 소수점으로 표현.<br>
+                        이 값은 0보다 크거나 같고 max 값보다 적거나 같아야 함.<br>
+                        만약 max 값이 지정되지 않았다면 이 값은 1.0보다 작아야 함.</li>
+                    <li>max 속성 : 작업이 완료되려면 얼마나 많은 작업을 해야 하는지 부동소수점으로 표현.<br>
+                        이 값은 0보다 커야 함.</li>
+                </ul>  
+        </ul>
 
-    <h2>&ltmeter&gt태그</h2>
-    <ul>
-        <li>전체 크기 중에서 얼마나 차지하는지를 표현할 때 사용.</li>
-        <li><strong>&ltmeter&gt태그 속성</strong></li>
-            <ul>
-                <li>min, max 속성 : 범위의 최솟값과 최댓값을 나타냄. 정하지 않으면 0과 1로 간주.</li>
-                <li>value 속성 : 범위 내에서 차지하는 값.</li>
-                <li>low 속성 : "이 정도면 낮다." 라고 할 정도의 값을 지정.</li>
-                <li>high 속성 : "이 정도면 높다." 라고 할 정도의 값을 지정.</li>
-                <li>optimum 속성 : "이 정도면 적당하다." 라고 할 정도의 범위를 지정.<br>
-                    high보다 크면 value값이 클수록 좋고, low보다 작으면 value값이 작을수록 좋다.
-            </ul>
-    </ul>
-    <form oninput="result.value=parseInt(num1.value)+parseInt(num2.value)" action="" method="post">
-        <fieldset>
-            <legend>input 태그 속성 실습</legend>
-                <label for="id">id 속성</label>
-                <input type="text" id="id" value="label을 이용하여 캡션 붙일수 있음."><br>
-                <label for="autofocus">autofocus 속성</label>
-                <input type="text" id="outofocus" value="페이지를 불러오자마자 마우스 커서 표시" autofocus><br>
-                <label for="placeholder">placeholder 속성</label>
-                <input type="text" id="placeholder" placeholder="입력란에 표시하는 힌트. 클릭시 사라짐."><br>
-                <label for="readonly">readonly 속성</label>
-                <input type="text" id="readonly" value="보기만 하고 입력하지 못하게 함." readonly><br>
-                <label for="reqired">reqired 속성</label>
-                <input type="text" id="reqired" value="필수 필드 체크. 입력하지 않으면 오류" required><br>
-                <label for="list">list 속성</label>
-                <input type="text" id="list" list="listvalue"><br>
-                    <datalist id="listvalue">
-                        <option value="datalist 태그의 id에" label="datalist"></option>
-                        <option value="적용한 값을 이용하여" label="데이터 설명"></option>
-                        <option value="사용할 데이터 목록 지정" label="label 부분"></option>
-                    </datalist>
-        </fieldset>
-        <fieldset>
-                <legend>input 태그의 type 속성별 실습</legend>
-                    <label for="text">type="text"</label>
-                    <input type="text" id="text" name="text" size="20" maxlength="50" minlength="5" value="type=&quot;text&quot;" title="size=20, maxlength=50, minlength=5"><br>
-                    <label for="hidden">type="hidden"</label>
-                    <input type="hidden" id="hidden" title="type=&quot;hidden&quot;"><br>
-                    <label for="password">type="password"</label>
-                    <input type="password" id="password" name="password" size="15" maxlength="30" minlength="10" value="type=&quot;password&quot;" title="type=&quot;password&quot;, size=15 maxlength=30 minlength=10"><br>
-                    <label for="search">type="search"</label>
-                    <input type="search" id="search" title="type=&quot;search&quot;"><br>
-                    <label for="email">type="email"</label>
-                    <input type="email" id="email" name="email" title="type=&quot;email&quot;"><br>
-                    <label for="url">type="url"</label>
-                    <input type="url" id="url", title="type=&quot;url&quot;"><br>
-                    <label for="tel">type="tel"</label>
-                    <input type="tel" id="tel" title="type=&quot;tel&quot;"><br>
-                    <label for="number">type="number"</label>
-                    <input type="number" id="number" min="0" max="10" value="4" step="2" title="type=&quot;number&quot;, min=0 max=10 value=4 step=2"><br>
-                    <label for="range">type="range"</label>
-                    5<input type="range" id="range" name="range" min="5" max="30" value="10" step="5" title="type=&quot;range&quot;, min=5 max=30 value=10 step=5">30<br>
-                    <label for="radio">type="radio"</label>
-                    <input type="radio" id="radio" name="radio" value="1" title="type=&quot;radio&quot;, value=1">
-                    <input type="radio" id="radio" name="radio" value="2" title="type=&quot;radio&quot;, value=2" checked>
-                    <input type="radio" id="radio" name="radio" value="3" title="type=&quot;radio&quot;, value=3"><br>
-                    <label for="checkbox">type="checkbox"</label>
-                    <input type="checkbox" id="checkbox" name="checkbox1" value="a" title="type=&quot;checkbox&quot;, value=a">
-                    <input type="checkbox" id="checkbox" name="checkbox2" value="b" title="type=&quot;checkbox&quot;, value=b">
-                    <input type="checkbox" id="checkbox" name="checkbox3" value="c" title="type=&quot;checkbox&quot;, value=c"><br>
-                    <label for="color">type="color"</label>
-                    <input type="color" id="color" title="type=&quot;color&quot;"><br>
-                    <label for="date">type="date"</label>
-                    <input type="date" id="date" title="type=&quot;date&quot;">
-                    <label for="month">type="month"</label>
-                    <input type="month" id="month" title="type=&quot;month&quot;"><br>
-                    <label for="week">type="week"</label>
-                    <input type="week" id="week" title="type=&quot;week&quot;"><br>
-                    <label for="time">type="time"</label>
-                    <input type="time" id="time" min="20:00" max="22:00" step="300" value="20:00" title="type=&quot;time&quot;, min=20:00 max=22:00 step=300 value=20:00"><br>
-                    <label for="datetime-local">type="datetime-local"</label>
-                    <input type="datetime-local" id="datetime-local" min="2000-10-06T22:22:55" max="2014-11-16T21:25:33" value="2000-10-10T13:40:58" title="type=&quot;datetime-local&quot;, min=2000-10-06T22:22:55 max=2014-11-16T21:25:33 value=2000-10-10T13:40:58"><br>
-                    <label for="submit">type="submit"</label>
-                    <input type="submit" id="submit" value="type=&quot;submit&quot;"><br>
-                    <label for="reset">type="reset"</label>
-                    <input type="reset" id="reset" value="type=&quot;reset&quot;"><br>
+        <h2>&ltmeter&gt태그</h2>
+        <ul>
+            <li>전체 크기 중에서 얼마나 차지하는지를 표현할 때 사용.</li>
+            <li><strong>&ltmeter&gt태그 속성</strong></li>
+                <ul>
+                    <li>min, max 속성 : 범위의 최솟값과 최댓값을 나타냄. 정하지 않으면 0과 1로 간주.</li>
+                    <li>value 속성 : 범위 내에서 차지하는 값.</li>
+                    <li>low 속성 : "이 정도면 낮다." 라고 할 정도의 값을 지정.</li>
+                    <li>high 속성 : "이 정도면 높다." 라고 할 정도의 값을 지정.</li>
+                    <li>optimum 속성 : "이 정도면 적당하다." 라고 할 정도의 범위를 지정.<br>
+                        high보다 크면 value값이 클수록 좋고, low보다 작으면 value값이 작을수록 좋다.
+                </ul>
+        </ul>
+        <form oninput="result.value=parseInt(num1.value)+parseInt(num2.value)" action="" method="post">
+            <fieldset>
+                <legend>input 태그 속성 실습</legend>
+                    <label for="id">id 속성</label>
+                    <input type="text" id="id" value="label을 이용하여 캡션 붙일수 있음."><br>
+                    <label for="autofocus">autofocus 속성</label>
+                    <input type="text" id="outofocus" value="페이지를 불러오자마자 마우스 커서 표시" autofocus><br>
+                    <label for="placeholder">placeholder 속성</label>
+                    <input type="text" id="placeholder" placeholder="입력란에 표시하는 힌트. 클릭시 사라짐."><br>
+                    <label for="readonly">readonly 속성</label>
+                    <input type="text" id="readonly" value="보기만 하고 입력하지 못하게 함." readonly><br>
+                    <label for="reqired">reqired 속성</label>
+                    <input type="text" id="reqired" value="필수 필드 체크. 입력하지 않으면 오류" required><br>
+                    <label for="list">list 속성</label>
+                    <input type="text" id="list" list="listvalue"><br>
+                        <datalist id="listvalue">
+                            <option value="datalist 태그의 id에" label="datalist"></option>
+                            <option value="적용한 값을 이용하여" label="데이터 설명"></option>
+                            <option value="사용할 데이터 목록 지정" label="label 부분"></option>
+                        </datalist>
             </fieldset>
-        <fieldset>
-            <legend>select 태그 실습</legend>
-                <label for="select">select 태그</label>
-                <select id="select">
-                    <option value="1">여러 옵션</option>
-                    <option value="2" selected>중에서(selected 속성 : 기본적으로 선택되어 있는 옵션 지정)</option>
-                    <option value="3">선택</option>
-                </select><br>
-                <label for="select-size">select 태그 size 속성</label>
-                <select id="select-size" size="2">
-                    <option value="1">size 속성</option>
-                    <option value="2">화면에 표시될</option>
-                    <option value="3">드롭다운 메뉴의</option>
-                    <option value="4">항목 개수 지정(이 select 태그에서는 2로 적용)</option>
-                </select><br>
-                <label for="select-multiple">select 태그 multiple 속성</label>
-                <select id="select-multiple" multiple>
-                    <option value="1">multiple 속성</option>
-                    <option value="2">브라우저 화면에 여러 개의 옵션이 함께 표시</option>
-                    <option value="3">Ctrl 키를 누른 상태로</option>
-                    <option value="4">드롭다운 메뉴에 있는 여러 항목 선택 가능.</option>
-                </select><br>
-                <label for="optgroup">optgroup 태그</label>
-                <select id="optgroup">
-                    <optgroup label="optgroup 태그">
-                        <option value="1">optgroup 태그</option>
-                        <option value="2">여러 항목을</option>
-                        <option value="3">그룹으로</option>
-                        <option value="4">묶을 때 사용</option>
-                    </optgroup>
-                    <optgroup label="optgroup 태그의 label 속성">
-                            <option value="1">optgroup 태그의 label 속성</option>
-                            <option value="2">그룹의 제목을</option>
-                            <option value="3">붙일때 사용</option>
-                    </optgroup>
-                </select><br>
-                <label for="option">option 태그 속성</label>
-                <select id="option">
-                    <option value="1">value 속성 : 옵션을 선택했을 때 서버로 넘겨질 값.(이 옵션은 1)</option>
-                    <option value="2" selected>selected 속성 : 화면에 표시될 때 기본으로 선택되어 있는 옵션 지정.</option>
-                    <option value="3" label="label 속성 : 사용자를 위해 브라우저에 표시할 레이블. 없을시 value값 사용(datalist에서 적용)"></option>
-                </select>
-        </fieldset>
-        <fieldset>
-            <legend>textarea 태그 실습</legend>
-                <label for="textarea">textarea 태그</label>
-                    <textarea name="textarea" clos="20" rows="10">name="textarea" clos="20"(가로 너비) rows="10"(세로 길이)</textarea>
-        </fieldset>
-        <fieldset>
-            <legend>button 태그 실습</legend>
-                <label for="button-type-submit">button 태그(type="submit")</label>
-                <button id="button-type-submit" type="submit">type=&quot;submit&quot;(폼을 서버로 전송)</button><br>
-                <label for="button-type-reset">button 태그(type="reset")</label>
-                <button id="button-type-reset" type="reset">type=&quot;reset&quot;(폼에 입력한 모든 내용 초기화)</button><br>
-                <label for="button-type-button">button 태그(type="button")</label>
-                <button id="button-type-button" type="button">type=&quot;button&quot;(버튼의 형태만 있을 뿐 자체 기능 없음)</button>
-        </fieldset>
-        <fieldset>
-            <legend>output 태그 실습(해당 output이 포함된 form에서 oninput 속성을 사용하여 수식 지정)</legend>
-                <input type="number" name="num1" value="0">+
-                <input type="number" name="num2" value="0">=
-                <output name="result"></output>
-        </fieldset>
-        <fieldset>
-            <legend>progress 태그 실습</legend>
-                <label for="progress">progress 태그(value=0.5 max=1)</label>
-                <progress id="progress" value="0.5" max="1"></progress><br>
-                <label for="progress">progress 태그(value=35 max=100)</label>
-                <progress id="progress" value="35" max="100"></progress>
-        </fieldset>
-        <fieldset>
-            <legend>meter 태그 실습(min = 0, max = 1)</legend>
-                <label for="meter-noatt">meter 기본</label>
-                <meter id="meter-noatt"></meter><br>
-                <label for="meter-value&#60max">meter : value(0.5) &#60 max</label>
-                <meter id="meter-value&#60max" value="0.5"></meter><br>
-                <label for="meter-value&#61max">meter : value(1) &#61 max</label>
-                <meter id="meter-value&#61max" value="1"></meter><br>
-                <label for="meter-value&#62max">meter : value(1.1) &#62 max</label>
-                <meter id="meter-value&#62max" value="1.1"></meter><br>
-                <label for="meter-value&#60min">meter : value(-0.1) &#60 min</label>
-                <meter id="meter-value&#60min" value="-0.1"></meter><br>
-                <label for="meter-value&#61min">meter : value(0) &#61 min</label>
-                <meter id="meter-value&#61min" value="0"></meter><br>
-                <label for="meter-value&#62min">meter : value(0.5) &#62 min</label>
-                <meter id="meter-value&#62min" value="0.5"></meter><br>
-                <label for="meter-value&#60high">meter : value(0.5) &#60 high(0.8)</label>
-                <meter id="meter-value&#60high" value="0.5" high="0.8"></meter><br>
-                <label for="meter-value&#61high">meter : value(0.8) &#61 high(0.8)</label>
-                <meter id="meter-value&#61high" value="0.8" high="0.8"></meter><br>
-                <label for="meter-value&#62high">meter : value(0.9) &#62 high(0.8)</label>
-                <meter id="meter-value&#61high" value="0.9" high="0.8"></meter><br>
-                <label for="meter-value&#60low">meter : value(0.15) &#60 low(0.25)</label>
-                <meter id="meter-value&#60low" value="0.15" low="0.25"></meter><br>
-                <label for="meter-value&#61low">meter : value(0.25) &#61 low(0.25)</label>
-                <meter id="meter-value&#61low" value="0.25" low="0.25"></meter><br>
-                <label for="meter-value&#62low">meter : value(0.5) &#62 low(0.25)</label>
-                <meter id="meter-value&#62low" value="0.5" low="0.25"></meter><br>
-                <label for="meter-optimum&#60low&#60high">meter(value 0.5) : optimum(0.15) &#60 low(0.25) &#60 high(0.75)</label>
-                <meter id="meter-optimum&#60low&#60high" low="0.25" optimum="0.15" high="0.75" value="0.5"></meter><br>
-                <label for="meter-low&#60optimum&#60high">meter(value 0.5) : low(0.25) &#60 optimum(0.5) &#60 high(0.75)</label>
-                <meter id="meter-low&#60optimum&#60high" low="0.25" optimum="0.5" high="0.75" value="0.5"></meter><br>
-                <label for="meter-low&#60high&#60optimum">meter(value 0.5) : low(0.25) &#60 high(0.75) &#60 optimum(0.85)</label>
-                <meter id="meter-low&#60high&#60optimum" low="0.25" optimum="0.85" high="0.75" value="0.5"></meter><br>
-                <label for="meter-value&#60low&#60high&#60optimum">meter : value(0.2) &#60 low(0.25) &#60 high(0.75) &#60 optimum(0.85)</label>
-                <meter id="meter-value&#60low&#60high&#60optimum" low="0.25" optimum="0.8" high="0.75" value="0.2"></meter><br>
-                <label for="meter-optimum&#60low&#60high&#60value">meter : optimum(0.15) &#60 low(0.25) &#60 high(0.75) &#60 value(0.8)</label>
-                <meter id="meter-optimum&#60low&#60high&#60value" low="0.25" optimum="0.2" high="0.75" value="0.8"></meter><br>
-        </fieldset>
-    </form>
-</body>
+            <fieldset>
+                    <legend>input 태그의 type 속성별 실습</legend>
+                        <label for="text">type="text"</label>
+                        <input type="text" id="text" name="text" size="20" maxlength="50" minlength="5" value="type=&quot;text&quot;" title="size=20, maxlength=50, minlength=5"><br>
+                        <label for="hidden">type="hidden"</label>
+                        <input type="hidden" id="hidden" title="type=&quot;hidden&quot;"><br>
+                        <label for="password">type="password"</label>
+                        <input type="password" id="password" name="password" size="15" maxlength="30" minlength="10" value="type=&quot;password&quot;" title="type=&quot;password&quot;, size=15 maxlength=30 minlength=10"><br>
+                        <label for="search">type="search"</label>
+                        <input type="search" id="search" title="type=&quot;search&quot;"><br>
+                        <label for="email">type="email"</label>
+                        <input type="email" id="email" name="email" title="type=&quot;email&quot;"><br>
+                        <label for="url">type="url"</label>
+                        <input type="url" id="url", title="type=&quot;url&quot;"><br>
+                        <label for="tel">type="tel"</label>
+                        <input type="tel" id="tel" title="type=&quot;tel&quot;"><br>
+                        <label for="number">type="number"</label>
+                        <input type="number" id="number" min="0" max="10" value="4" step="2" title="type=&quot;number&quot;, min=0 max=10 value=4 step=2"><br>
+                        <label for="range">type="range"</label>
+                        5<input type="range" id="range" name="range" min="5" max="30" value="10" step="5" title="type=&quot;range&quot;, min=5 max=30 value=10 step=5">30<br>
+                        <label for="radio">type="radio"</label>
+                        <input type="radio" id="radio" name="radio" value="1" title="type=&quot;radio&quot;, value=1">
+                        <input type="radio" id="radio" name="radio" value="2" title="type=&quot;radio&quot;, value=2" checked>
+                        <input type="radio" id="radio" name="radio" value="3" title="type=&quot;radio&quot;, value=3"><br>
+                        <label for="checkbox">type="checkbox"</label>
+                        <input type="checkbox" id="checkbox" name="checkbox1" value="a" title="type=&quot;checkbox&quot;, value=a">
+                        <input type="checkbox" id="checkbox" name="checkbox2" value="b" title="type=&quot;checkbox&quot;, value=b">
+                        <input type="checkbox" id="checkbox" name="checkbox3" value="c" title="type=&quot;checkbox&quot;, value=c"><br>
+                        <label for="color">type="color"</label>
+                        <input type="color" id="color" title="type=&quot;color&quot;"><br>
+                        <label for="date">type="date"</label>
+                        <input type="date" id="date" title="type=&quot;date&quot;">
+                        <label for="month">type="month"</label>
+                        <input type="month" id="month" title="type=&quot;month&quot;"><br>
+                        <label for="week">type="week"</label>
+                        <input type="week" id="week" title="type=&quot;week&quot;"><br>
+                        <label for="time">type="time"</label>
+                        <input type="time" id="time" min="20:00" max="22:00" step="300" value="20:00" title="type=&quot;time&quot;, min=20:00 max=22:00 step=300 value=20:00"><br>
+                        <label for="datetime-local">type="datetime-local"</label>
+                        <input type="datetime-local" id="datetime-local" min="2000-10-06T22:22:55" max="2014-11-16T21:25:33" value="2000-10-10T13:40:58" title="type=&quot;datetime-local&quot;, min=2000-10-06T22:22:55 max=2014-11-16T21:25:33 value=2000-10-10T13:40:58"><br>
+                        <label for="submit">type="submit"</label>
+                        <input type="submit" id="submit" value="type=&quot;submit&quot;"><br>
+                        <label for="reset">type="reset"</label>
+                        <input type="reset" id="reset" value="type=&quot;reset&quot;"><br>
+                </fieldset>
+            <fieldset>
+                <legend>select 태그 실습</legend>
+                    <label for="select">select 태그</label>
+                    <select id="select">
+                        <option value="1">여러 옵션</option>
+                        <option value="2" selected>중에서(selected 속성 : 기본적으로 선택되어 있는 옵션 지정)</option>
+                        <option value="3">선택</option>
+                    </select><br>
+                    <label for="select-size">select 태그 size 속성</label>
+                    <select id="select-size" size="2">
+                        <option value="1">size 속성</option>
+                        <option value="2">화면에 표시될</option>
+                        <option value="3">드롭다운 메뉴의</option>
+                        <option value="4">항목 개수 지정(이 select 태그에서는 2로 적용)</option>
+                    </select><br>
+                    <label for="select-multiple">select 태그 multiple 속성</label>
+                    <select id="select-multiple" multiple>
+                        <option value="1">multiple 속성</option>
+                        <option value="2">브라우저 화면에 여러 개의 옵션이 함께 표시</option>
+                        <option value="3">Ctrl 키를 누른 상태로</option>
+                        <option value="4">드롭다운 메뉴에 있는 여러 항목 선택 가능.</option>
+                    </select><br>
+                    <label for="optgroup">optgroup 태그</label>
+                    <select id="optgroup">
+                        <optgroup label="optgroup 태그">
+                            <option value="1">optgroup 태그</option>
+                            <option value="2">여러 항목을</option>
+                            <option value="3">그룹으로</option>
+                            <option value="4">묶을 때 사용</option>
+                        </optgroup>
+                        <optgroup label="optgroup 태그의 label 속성">
+                                <option value="1">optgroup 태그의 label 속성</option>
+                                <option value="2">그룹의 제목을</option>
+                                <option value="3">붙일때 사용</option>
+                        </optgroup>
+                    </select><br>
+                    <label for="option">option 태그 속성</label>
+                    <select id="option">
+                        <option value="1">value 속성 : 옵션을 선택했을 때 서버로 넘겨질 값.(이 옵션은 1)</option>
+                        <option value="2" selected>selected 속성 : 화면에 표시될 때 기본으로 선택되어 있는 옵션 지정.</option>
+                        <option value="3" label="label 속성 : 사용자를 위해 브라우저에 표시할 레이블. 없을시 value값 사용(datalist에서 적용)"></option>
+                    </select>
+            </fieldset>
+            <fieldset>
+                <legend>textarea 태그 실습</legend>
+                    <label for="textarea">textarea 태그</label>
+                        <textarea name="textarea" clos="20" rows="10">name="textarea" clos="20"(가로 너비) rows="10"(세로 길이)</textarea>
+            </fieldset>
+            <fieldset>
+                <legend>button 태그 실습</legend>
+                    <label for="button-type-submit">button 태그(type="submit")</label>
+                    <button id="button-type-submit" type="submit">type=&quot;submit&quot;(폼을 서버로 전송)</button><br>
+                    <label for="button-type-reset">button 태그(type="reset")</label>
+                    <button id="button-type-reset" type="reset">type=&quot;reset&quot;(폼에 입력한 모든 내용 초기화)</button><br>
+                    <label for="button-type-button">button 태그(type="button")</label>
+                    <button id="button-type-button" type="button">type=&quot;button&quot;(버튼의 형태만 있을 뿐 자체 기능 없음)</button>
+            </fieldset>
+            <fieldset>
+                <legend>output 태그 실습(해당 output이 포함된 form에서 oninput 속성을 사용하여 수식 지정)</legend>
+                    <input type="number" name="num1" value="0">+
+                    <input type="number" name="num2" value="0">=
+                    <output name="result"></output>
+            </fieldset>
+            <fieldset>
+                <legend>progress 태그 실습</legend>
+                    <label for="progress">progress 태그(value=0.5 max=1)</label>
+                    <progress id="progress" value="0.5" max="1"></progress><br>
+                    <label for="progress">progress 태그(value=35 max=100)</label>
+                    <progress id="progress" value="35" max="100"></progress>
+            </fieldset>
+            <fieldset>
+                <legend>meter 태그 실습(min = 0, max = 1)</legend>
+                    <label for="meter-noatt">meter 기본</label>
+                    <meter id="meter-noatt"></meter><br>
+                    <label for="meter-value&#60max">meter : value(0.5) &#60 max</label>
+                    <meter id="meter-value&#60max" value="0.5"></meter><br>
+                    <label for="meter-value&#61max">meter : value(1) &#61 max</label>
+                    <meter id="meter-value&#61max" value="1"></meter><br>
+                    <label for="meter-value&#62max">meter : value(1.1) &#62 max</label>
+                    <meter id="meter-value&#62max" value="1.1"></meter><br>
+                    <label for="meter-value&#60min">meter : value(-0.1) &#60 min</label>
+                    <meter id="meter-value&#60min" value="-0.1"></meter><br>
+                    <label for="meter-value&#61min">meter : value(0) &#61 min</label>
+                    <meter id="meter-value&#61min" value="0"></meter><br>
+                    <label for="meter-value&#62min">meter : value(0.5) &#62 min</label>
+                    <meter id="meter-value&#62min" value="0.5"></meter><br>
+                    <label for="meter-value&#60high">meter : value(0.5) &#60 high(0.8)</label>
+                    <meter id="meter-value&#60high" value="0.5" high="0.8"></meter><br>
+                    <label for="meter-value&#61high">meter : value(0.8) &#61 high(0.8)</label>
+                    <meter id="meter-value&#61high" value="0.8" high="0.8"></meter><br>
+                    <label for="meter-value&#62high">meter : value(0.9) &#62 high(0.8)</label>
+                    <meter id="meter-value&#61high" value="0.9" high="0.8"></meter><br>
+                    <label for="meter-value&#60low">meter : value(0.15) &#60 low(0.25)</label>
+                    <meter id="meter-value&#60low" value="0.15" low="0.25"></meter><br>
+                    <label for="meter-value&#61low">meter : value(0.25) &#61 low(0.25)</label>
+                    <meter id="meter-value&#61low" value="0.25" low="0.25"></meter><br>
+                    <label for="meter-value&#62low">meter : value(0.5) &#62 low(0.25)</label>
+                    <meter id="meter-value&#62low" value="0.5" low="0.25"></meter><br>
+                    <label for="meter-optimum&#60low&#60high">meter(value 0.5) : optimum(0.15) &#60 low(0.25) &#60 high(0.75)</label>
+                    <meter id="meter-optimum&#60low&#60high" low="0.25" optimum="0.15" high="0.75" value="0.5"></meter><br>
+                    <label for="meter-low&#60optimum&#60high">meter(value 0.5) : low(0.25) &#60 optimum(0.5) &#60 high(0.75)</label>
+                    <meter id="meter-low&#60optimum&#60high" low="0.25" optimum="0.5" high="0.75" value="0.5"></meter><br>
+                    <label for="meter-low&#60high&#60optimum">meter(value 0.5) : low(0.25) &#60 high(0.75) &#60 optimum(0.85)</label>
+                    <meter id="meter-low&#60high&#60optimum" low="0.25" optimum="0.85" high="0.75" value="0.5"></meter><br>
+                    <label for="meter-value&#60low&#60high&#60optimum">meter : value(0.2) &#60 low(0.25) &#60 high(0.75) &#60 optimum(0.85)</label>
+                    <meter id="meter-value&#60low&#60high&#60optimum" low="0.25" optimum="0.8" high="0.75" value="0.2"></meter><br>
+                    <label for="meter-optimum&#60low&#60high&#60value">meter : optimum(0.15) &#60 low(0.25) &#60 high(0.75) &#60 value(0.8)</label>
+                    <meter id="meter-optimum&#60low&#60high&#60value" low="0.25" optimum="0.2" high="0.75" value="0.8"></meter><br>
+            </fieldset>
+        </form>
+    </body>
+</html>

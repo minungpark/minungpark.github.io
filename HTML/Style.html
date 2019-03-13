@@ -1,103 +1,105 @@
 <!doctype html>
-<head>
-    <meta charset="utf-8">
-    <title>CSS 기초</title>
-    <link href="CSS/Style.css" rel="stylesheet" type="text/css">
-    <style>
-        h2
-        {
-            color:blue; /* h2 글자색 */
-            font-size:24px; /* 폰트 사이즈 */
-        }
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS 기초</title>
+        <link href="CSS/Style.css" rel="stylesheet" type="text/css">
+        <style>
+            h2
+            {
+                color:blue; /* h2 글자색 */
+                font-size:24px; /* 폰트 사이즈 */
+            }
 
-        ul
-        {
-            color:red;
-            list-style-type:square;
-        }
-    </style>
-</head>
-<body>
-    <h2>스타일 형식 : 선택자 { 스타일 속성: 속성 값 }</h2>
-    <ul>
-        <li>선택자 : { 와 } 사이에 정의한 스타일 규칙이 적용될 대상</li>
-        <li>스타일 속성과 속성 값 : '속성: 속성 값'과 같은 형식으로 함께 표시.<br>
-            여러개일 경우 세미콜론으로 구분</li>
-    </ul>
+            ul
+            {
+                color:red;
+                list-style-type:square;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>스타일 형식 : 선택자 { 스타일 속성: 속성 값 }</h2>
+        <ul>
+            <li>선택자 : { 와 } 사이에 정의한 스타일 규칙이 적용될 대상</li>
+            <li>스타일 속성과 속성 값 : '속성: 속성 값'과 같은 형식으로 함께 표시.<br>
+                여러개일 경우 세미콜론으로 구분</li>
+        </ul>
 
-    <h2>스타일 표기 방법</h2>
-    <ul>
-        <li><pre>선택자 { 스타일 속성: 속성 값 }</pre></li>
-        <li><pre>선택자 {
+        <h2>스타일 표기 방법</h2>
+        <ul>
+            <li><pre>선택자 { 스타일 속성: 속성 값 }</pre></li>
+            <li><pre>선택자 {
+            스타일 속성: 속성 값
+    }
+            </pre></li>
+            <li><pre>선택자
+    {
         스타일 속성: 속성 값
-}
-        </pre></li>
-        <li><pre>선택자
-{
-    스타일 속성: 속성 값
-}
-        </pre></li>
-    </ul>
-
-    <h2>스타일 주석</h2>
-    <ul>
-        <li>/* 와 */ 사이에 주석 내용 입력</li>
-        <li>한 줄 또는 여러 줄을 입력 가능</li>
-    </ul>
-
-    <h2>내부 스타일 시트</h2>
-    <ul>
-        <li>웹 문서 안에서 사용할 스타일을 문서 안에 정리한 것</li>
-        <li>모든 스타일 정보는 &lthead&gt태그와 &lt/head&gt태그 안에서 정의</li>
-        <li>&ltstyle&gt태그와 &lt/style&gt태그 사이에 작성</li>
-    </ul>
-
-    <h2 class="greentext-32">외부 스타일 시트(외부 스타일 시트에서 적용 중)</h2>
-    <ul>
-        <li class="purpletext-32">여러 웹 문서에서 사용할 스타일을 별도 파일로 저장해 놓고 필요할 때마다 가져와 사용</li>
-        <li class="greentext-32">&ltstyle&gt태그 없이 &lthead&gt태그 안에 &ltlink&gt태그만 사용해 미리 만들어 놓은 외부 스타일 시트 파일 연결</li>
-        <li>ex) &ltlink href="Style.css" rel="stylesheet" type="text/css"&gt</li>
-    </ul>
-
-    <h2 style="color:red">인라인 스타일(적용 중)</h2>
-    <ul style="color:goldenrod">
-        <li>스타일 시트를 사용하지 않고 스타일을 적용할 대상에 직접 표시</li>
-        <li style="color:brown">적용하고 싶은 태그에 style 속성을 사용해 "style="속성: 속성 값;" 형태로 스타일 적용</li>
-        <li>ex) &ltul style="color:goldenrod"&gt&lt/ul&gt </li>
-    </ul>
-
-    <h2>전체 선택자(외부 스타일 시트에서 적용 중)</h2>
-    <ul>
-        <li>페이지에 있는 모든 요소를 대상으로 스타일을 적용할 때 사용</li>
-        <li>다른 선택자와 함께 모든 하위 요소에 한꺼번에 스타일을 적용하려고 할 때 주로 사용.</li>
-        <li>ex) * { 속성: 속성 값; ... }</li>
-    </ul>
-
-    <h2>태그 선택자</h2>
-    <ul>
-        <li>문서에서 특정 태그를 사용한 모든 요소에 스타일이 적용</li>
-        <li>ex) 태그 { 속성: 속성 값; ...}</li>
-    </ul>
-
-    <h2>클래스(class) 선택자, id 선택자(외부 스타일 시트에서 적용 중)</h2>
-    <ul>
-        <li>공통점 : 요소의 특정 부분에만 스타일 적용</li>
-        <li>차이점</li>
-            <ul>
-                <li class="darkbluetext-16">클래스 선택자 : 문서 안에서 여러 번 반복할 스타일이라면 클래스 선택자로 정의<br>
-                    마침표(.) 다음에 클래스 이름 지정</li>
-                <li><pre>ex) .classname
-    {
-        color:blue;
     }
-                </pre></li>
-                <li>id 선택자 : 문서 안에서 한번만 사용한다면 id 선택자로 정의<br>
-                    파운드(#) 다음에 id 이름 지정</li>
-                <li id="libluetext"><pre>ex) #id
-    {
-        color:blue;
-    }
-                </pre></li>
-            </ul>
-    </ul>
-</body>
+            </pre></li>
+        </ul>
+
+        <h2>스타일 주석</h2>
+        <ul>
+            <li>/* 와 */ 사이에 주석 내용 입력</li>
+            <li>한 줄 또는 여러 줄을 입력 가능</li>
+        </ul>
+
+        <h2>내부 스타일 시트</h2>
+        <ul>
+            <li>웹 문서 안에서 사용할 스타일을 문서 안에 정리한 것</li>
+            <li>모든 스타일 정보는 &lthead&gt태그와 &lt/head&gt태그 안에서 정의</li>
+            <li>&ltstyle&gt태그와 &lt/style&gt태그 사이에 작성</li>
+        </ul>
+
+        <h2 class="greentext-32">외부 스타일 시트(외부 스타일 시트에서 적용 중)</h2>
+        <ul>
+            <li class="purpletext-32">여러 웹 문서에서 사용할 스타일을 별도 파일로 저장해 놓고 필요할 때마다 가져와 사용</li>
+            <li class="greentext-32">&ltstyle&gt태그 없이 &lthead&gt태그 안에 &ltlink&gt태그만 사용해 미리 만들어 놓은 외부 스타일 시트 파일 연결</li>
+            <li>ex) &ltlink href="Style.css" rel="stylesheet" type="text/css"&gt</li>
+        </ul>
+
+        <h2 style="color:red">인라인 스타일(적용 중)</h2>
+        <ul style="color:goldenrod">
+            <li>스타일 시트를 사용하지 않고 스타일을 적용할 대상에 직접 표시</li>
+            <li style="color:brown">적용하고 싶은 태그에 style 속성을 사용해 "style="속성: 속성 값;" 형태로 스타일 적용</li>
+            <li>ex) &ltul style="color:goldenrod"&gt&lt/ul&gt </li>
+        </ul>
+
+        <h2>전체 선택자(외부 스타일 시트에서 적용 중)</h2>
+        <ul>
+            <li>페이지에 있는 모든 요소를 대상으로 스타일을 적용할 때 사용</li>
+            <li>다른 선택자와 함께 모든 하위 요소에 한꺼번에 스타일을 적용하려고 할 때 주로 사용.</li>
+            <li>ex) * { 속성: 속성 값; ... }</li>
+        </ul>
+
+        <h2>태그 선택자</h2>
+        <ul>
+            <li>문서에서 특정 태그를 사용한 모든 요소에 스타일이 적용</li>
+            <li>ex) 태그 { 속성: 속성 값; ...}</li>
+        </ul>
+
+        <h2>클래스(class) 선택자, id 선택자(외부 스타일 시트에서 적용 중)</h2>
+        <ul>
+            <li>공통점 : 요소의 특정 부분에만 스타일 적용</li>
+            <li>차이점</li>
+                <ul>
+                    <li class="darkbluetext-16">클래스 선택자 : 문서 안에서 여러 번 반복할 스타일이라면 클래스 선택자로 정의<br>
+                        마침표(.) 다음에 클래스 이름 지정</li>
+                    <li><pre>ex) .classname
+        {
+            color:blue;
+        }
+                    </pre></li>
+                    <li>id 선택자 : 문서 안에서 한번만 사용한다면 id 선택자로 정의<br>
+                        파운드(#) 다음에 id 이름 지정</li>
+                    <li id="libluetext"><pre>ex) #id
+        {
+            color:blue;
+        }
+                    </pre></li>
+                </ul>
+        </ul>
+    </body>
+</html>
