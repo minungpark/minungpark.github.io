@@ -1,8 +1,8 @@
 ---
 title : "Mixare 와 Vuforia 오픈소스를 이용한 AR 지도 어플리케이션" 
 last_modified_at: 2019-03-14T14:34:00+0900
-category : JSP
-tags : JSP DB
+category : Android
+tags : Android, Mixare, Vuforia
 toc: true
 --- 
 
