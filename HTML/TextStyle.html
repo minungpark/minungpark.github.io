@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+    <head>
+        <title>텍스트 스타일</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+            body { font-family: "맑은 고딕", 돋움, 굴림 }
+
+            .li { font-family: "Nanum Gothic", 돋움 }
+
+            .font-size { font-size: 30px }
+
+            .font-weight { font-weight: bold }
+
+            .font-style-normal { font-style: normal }
+
+            .font-style-italic { font-style: italic }
+
+            .font-style-oblique { font-style: oblique }
+
+            .color-16 { color:#0000ff }
+
+            .color-rgb { color:rgb(255, 0, 0) }
+            
+            .color-hsl { color:hsl(300, 100%, 50%)}
+
+            .color-name { color:brown }
+
+            .text-decoration-none { text-decoration: none }
+
+            .text-decoration-underline { text-decoration: underline }
+
+            .text-decoration-overline { text-decoration: overline }
+
+            .text-decoration-line-through { text-decoration: line-through }
+
+            .shadow { text-shadow: 1px 1px 1px #0000FF }
+
+            .white-space-normal { white-space: normal }
+
+            .white-space-nowrap { white-space: nowrap }
+
+            .white-space-pre { white-space: pre }
+
+            .white-space-pre-line { white-space: pre-line }
+
+            .white-space-pre-wrap { white-space: pre-wrap }
+
+            .letter-spacing { letter-spacing: 10px }
+
+            .word-spacing { word-spacing: 10px }
+
+        </style>
+    </head>
+    <body>
+        <h2>font-family 속성</h2>
+        <ul>
+            <li>웹 문서에서 사용할 글꼴 지정</li>
+            <li>body 태그를 비롯해 p 태그나 hn 태그처럼 텍스트를 사용하는 요소들에서 사용</li>
+            <li>웹 문서에서 글꼴을 지정할 때는 한 가지 글꼴만 지정하기도 하지만,<br>
+                지정한 글꼴이 없을 경우에 대비해 두 번째, 세 번째 글꼴까지 지정함.</li>
+            <li>둘 이상의 글꼴 이름을 지정할 때는 쉼표(,)로 글꼴 구분</li>
+            <li>font-family 속성은 상속되기 때문에, body 태그 스타일에서 한 번 정의하면 문서 전체에 적용되고<br>
+                문서 안의 모든 자식 요소에 계속 같은 글꼴이 사용됨.</li>
+            <li>부모 요소와 다른 글꼴을 사용하고 싶다면<br>
+                태그 스타일이나 클래스 스타일을 이용해 해당 요소에서 다른 글꼴을 정의함.</li>
+            <li>ex) body { font-family: "맑은 고딕", 돋움, 굴림 }</li>
+        </ul>
+
+        <h2>@font-face 속성</h2>
+        <ul class="li">
+            <li>웹 폰트(web-font) : 웹 문서 안에 글꼴 정보도 함께 저장했다가<br>
+                사용자가 웹 문서에 접속하면 글꼴을 사용자 시스템으로 로드시켜 사용하는 글꼴</li>
+            <li>사용자 시스템에 없는 글꼴이더라도 웹 제작자가 의도한 대로 텍스트를 표시할 수 있음.</li>
+            <li>사용 하고 싶을 시, 원하는 웹 폰트의 import 링크를 찾은 다음 style 태그 안에 붙여넣으면 사용 가능.</li>
+            <li>ex 구글 웹 폰트) @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');</li>
+        </ul>
+
+        <h2>font-size 속성</h2>
+        <ul>
+            <li>글꼴 크기를 지정하는 속성</li>
+            <li>사용할 수 있는 값: 절대 크기, 상대 크기, 숫자, 백분율</li>
+            <li>기본 값은 상대 크기인 medium이며 font-size 속성은 상속된다.</li>
+        </ul>
+
+        <h2>font-whight 속성</h2>
+        <ul>
+            <li>글꼴 두께를 지정하는 속성</li>
+            <li>사용할 수 있는 값:100~900, 키워드(bold)</li>
+        </ul>
+
+        <h2>font-style 속성</h2>
+        <ul>
+            <li>글꼴체를 지정하는 속성</li>
+            <li>사용할 수 있는 값:normal, italic, oblique</li>
+            <ul>
+                <li class="font-style-normal">normal</li>
+                <li class="font-style-italic">italic(서체)</li>
+                <li class="font-style-oblique">oblique(단순 기울임)</li>
+            </ul>
+        </ul>
+
+        <h2>color 속성</h2>
+        <ul>
+            <li>글자 색 지정하기도</li>
+            <li><span class="color-16">16진수 값</span>, <span class="color-rgb">rgb값</span>, 
+                <span class="color-hsl">hsl값</span>, <span class="color-name">색상 이름</span> 
+                중에서 사용</li>
+        </ul>
+
+        <h2>text-decoration 속성</h2>
+        <ul>
+            <li>텍스트에 밑줄을 긋거나 가로지르는 줄 표시</li>
+            <li>텍스트 링크의 밑줄을 없앨 때도 사용한다.</li>
+            <ul>
+                <li class="text-decoration-none">none : 밑줄을 표시하지 않는다.</li>
+                <li class="text-decoration-underline">underline : 밑줄을 표시.</li>
+                <li class="text-decoration-overline">overline : 영역 위로 선을 그림.</li>
+                <li class="text-decoration-line-through">line-through : 영역을 가로지르는 선(취소 선)을 그림.</li>
+            </ul>
+        </ul>
+
+        <h2>text-shadow 속성</h2>
+        <ul>
+            <li>텍스트에 그림자 효과를 추가하는 속성</li>
+            <li>[가로 거리, 세로 거리](필수), 번짐 정도, 색상으로 표시</li>
+            <li class="shadow">ex) text-shadow: 1px 1px 1px #0000FF</li>
+        </ul>
+
+        <h2>white-space 속성</h2>
+        <ul>
+            <li>공백 처리 방법 지정</li>
+            <ul>
+                <li class="white-space-normal">normal : 기본 값.                  연속하는 공백을 하나로 처리</li>
+                <li class="white-space-nowrap">nowrap : 연속하는 공백을 하나로 처리하고,                      줄을 바꾸지 않음. 연속하는 공백을 하나로 처리하고,                      줄을 바꾸지 않음. 연속하는 공백을 하나로 처리하고,                      줄을 바꾸지 않음. 연속하는 공백을 하나로 처리하고,                      줄을 바꾸지 않음. 연속하는 공백을 하나로 처리하고,                      줄을 바꾸지 않음</li>
+                <li class="white-space-pre">pre : 연속하는 공백을 그대로 표시하고,                        영역 너비를 넘어가는 부분의 줄을 자동으로 바꾸지 않음 연속하는 공백을 그대로 표시하고,                        영역 너비를 넘어가는 부분의 줄을 자동으로 바꾸지 않음 연속하는 공백을 그대로 표시하고,                        영역 너비를 넘어가는 부분의 줄을 자동으로 바꾸지 않음 연속하는 공백을 그대로 표시하고,                        영역 너비를 넘어가는 부분의 줄을 자동으로 바꾸지 않음</li>
+                <li class="white-space-pre-line">pre-line : 연속하는 공백을 하나로 처리하고,                        영역 너비를 넘어가는 부분의 줄을 자동으로 바꿈 연속하는 공백을 하나로 처리하고,                        영역 너비를 넘어가는 부분의 줄을 자동으로 바꿈 연속하는 공백을 하나로 처리하고,                        영역 너비를 넘어가는 부분의 줄을 자동으로 바꿈</li>
+                <li class="white-space-pre-wrap">pre-wrap : 연속하는 공백을 그대로 표시하고,                       영역 너비를 넘어가는 부분의 줄을 자동으로 바꿈 연속하는 공백을 그대로 표시하고,                       영역 너비를 넘어가는 부분의 줄을 자동으로 바꿈 연속하는 공백을 그대로 표시하고,                       영역 너비를 넘어가는 부분의 줄을 자동으로 바꿈 연속하는 공백을 그대로 표시하고,                       영역 너비를 넘어가는 부분의 줄을 자동으로 바꿈</li>
+            </ul>
+        </ul>
+        
+        <h2>letter-spacing, word-spacing 속성</h2>
+        <ul>
+            <li>글자간 간격, 단어간 간격</li>
+            <ul>
+                <li class="letter-spacing">letter-spacing 사용(글자간 간격)</li>
+                <li class="word-spacing">word-spacing 사용(단어간 간격)</li>
+            </ul>
+        </ul>
+    </body>
+</html>
