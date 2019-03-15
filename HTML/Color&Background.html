@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+    <head>
+        <title>색상 표현, 배경 스타일</title>
+        <style>
+            .background-color-body { background-color: #0094ff; background-position:right top; background-attachment:fixed; background-repeat: no-repeat; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-color-div { background-color: white }
+            .background-clip-border-box { background-clip: border-box; border: 5px dashed; padding: 10px; background-color:yellow }
+            .background-clip-padding-box { background-clip: padding-box; border: 5px dashed; padding: 10px; background-color:skyblue }
+            .background-clip-content-box { background-clip: content-box; border: 5px dashed; padding: 10px; background-color:pink}
+            .background-image { background-image: url('https://minungpark.github.io/HTML/background-image.png')}
+            .background-repeat { background-repeat: repeat; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-repeat-x { background-repeat: repeat-x; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-repeat-y { background-repeat: repeat-y; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-no-repeat { background-repeat: no-repeat; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-size-auto { background-size: auto; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-size-contain { background-size: contain; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-size-cover { background-size: cover; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-size-number { background-size: 50px 50px; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-size-persent { background-size: 30% 40%; border: 5px dashed; padding: 100px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-position-persent { background-repeat: no-repeat; border: 5px dashed; padding: 100px; background-position: 30% 60%; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-position-number { background-repeat: no-repeat; border: 5px dashed; padding: 100px; background-position: 0px 0px; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-position-keyword { background-repeat: no-repeat; border: 5px dashed; padding: 100px; background-position: right bottom; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+            .background-attachment-fixed { background-attachment:fixed; background-repeat: no-repeat; background-image: url('https://minungpark.github.io/HTML/background-image.png') }
+        </style>
+    </head>
+    <body class="background-color-body">
+        <h2>16진수 표현법</h2>
+            <ul>
+                <li>#ffffff 처럼 #과 함께 6자리의 16진수로 표시.</li>
+                <li>앞에서부터 두자리 씩 빨강, 초록, 파랑의 양</li>
+                <li>하나도 섞이지 않았을 때는 00, 가득 섞였을 때는 ff.</li>
+                <li>000000(검은색)~ffffff(흰색)</li>
+                <li>두 자리씩 중복될 경우 줄여 사용할 수 있음.</li>
+                <li>ex) #ffff00 -> #ff0, #cccccc -> #ccc</li>
+            </ul>
+            
+        <h2>rgb/rgba 표기법</h2>
+            <ul>
+                <li>color:rgb(255,0,0)처럼 세 자리의 숫자로 표시.</li>
+                <li>앞의 숫자부터 빨강, 초록 파랑의 양</li>
+                <li>하나도 섞이지 않았을 때는 0, 가득 섞였을 때는 255</li>
+                <li>투명도를 조절할 때는 color:rgba(255,0,0,.3)처럼 마지막에 알파값 추가</li>
+                <li>알파값은 불투명도를 나타내는 값으로 0~1 값 중에서 사용(1은 불투명, 0은 완전 투명)</li>
+            </ul>
+        
+        <h2>hsl/hsla 표기법</h2>
+            <ul>
+                <li>color:hsl(240,100%,50%)처럼 세 자리의 숫자로 표시.</li>
+                <li>앞의 숫자부터 색상(hue), 채도(saturation), 밝기(light)의 양.</li>
+                <li>투명도를 조절할 때는 hsla(240, 100%, 50%, 0.3)처럼 마지막에 알파값 추가</li>
+                <li>알파값은 불투명도를 나타내는 값으로 0~1 값 중에서 사용(1은 불투명, 0은 완전 투명)</li>
+            </ul>
+        
+        <h2>색상 이름 표기법</h2>
+            <ul>
+                <li>잘 알려진 색상 이름으로 표시</li>
+                <li>기분 색상 16가지</li>
+                <li>모든 브라우저에서 표현할 수 있는 색상을 웹 안전 색상(web safe color)라고 하는데<br>
+                    기본 16가지 색상을 포함해 모두 216가지.</li>
+            </ul>
+        
+        <div class="background-color-div">
+            <h2>background-color 속성</h2>
+            <ul>
+                <li>웹 문서의 요소에 배경색 지정</li>
+                <li>웹 문서 전체에 지정하려면 body 태그에 사용</li>
+                <li>16 진수, rgb 값, hsl 값, 또는 색상 이름 사용</li>
+            </ul>
+        </div>
+
+        <h2>background-clip 속성</h2>
+            <ul>
+                <li>배경을 어디까지 적용할지 지정</li>
+                <li>박스 모델 기준</li>
+                <ul>
+                    <li class="background-clip-border-box">border-box : 박스 모델의 가장 외곽인 테두리(border)까지 적용</li>
+                    <li class="background-clip-padding-box">padding-box : 박스 모델에서 테두리를 뺀 패딩(padding) 범위까지 적용</li>
+                    <li class="background-clip-content-box">content-box : 박스 모델에서 내용 부분에만 적용</li>
+                </ul>
+            </ul>
+        
+        <div class="background-image">
+            <h2 >background-image 속성</h2>
+                <ul>
+                    <li>배경 이미지 지정하기</li>
+                    <li>배경 이미지 파일 경로 지정</li>
+                </ul>
+        </div>
+
+        <h2>background-repeat 속성</h2>
+            <ul>
+                <li>배경 이미지 반복 여부 및 반복 방향 지정</li>
+                <li class="background-repeat">repeat : 브라우저 화면에 가득 찰 때까지 배경이미지를 가로와 세로로 반복(기본값)</li>
+                <li class="background-repeat-x">repeat-x : 브라우저 창 너비와 같아질 때까지 배경이미지를 가로로 반복</li>
+                <li class="background-repeat-y">repeat-y : 브라우저 창 높이와 같아질 때까지 배경이미지를 세로로 반복</li>
+                <li class="background-no-repeat">no-repeat : 배경 이미지를 한 번만 표시하고 반복하지 않음</li>
+            </ul>
+
+        <h2>background-size 속성</h2>
+            <ul>
+                <li>배경 이미지 크기 조절</li>
+                <li class="background-size-auto">auto : 원래 배경 이미지 크기만큼 표시</li>
+                <li class="background-size-contain">contain : 요소 안에 배경 이미지가 다 들어오도록 확대/축소</li>
+                <li class="background-size-cover">cover : 배경 이미지로 요소를 모두 덮도록 확대/축소</li>
+                <li class="background-size-number">크기 값 : 너비 값과 높이 값을 지정.<br>
+                    너비 값만 지정할 경우, 원래 배경 이미지 크기를 기준으로 축소/확대 비율을 자동으로 계산하여 높이 값을 지정.</li>
+                <li class="background-size-persent">백분율 값 : 원래 배경 이미지 크기를 기준으로 확대/축소</li>    
+            </ul>
+
+        <h2>background-position 속성</h2>
+            <ul>
+                <li>배경 이미지를 반복하지 않을 경우, 배경 이미지를 표시할 위치 지정</li>
+                    <ol>
+                        <li class="background-position-persent">백분율 : 배경 이미지의 가로 위치와 세로 위치를 %로 나타냄(30% 60%)</li>
+                        <li class="background-position-number">길이 길이 : 배경 이미지의 위치를 직접 길이로 지정(0px, 0px)</li>
+                        <li class="background-position-keyword">키워드 : 가로배치는(left, center, top), 세로 배치는(top, bottom, center)중에서 선택(right bottom)</li>
+                    </ol>
+            </ul>
+
+        <h2>background-attachment 속성</h2>
+            <ul>
+                <li>배경 이미지를 고정하는 속성</li>
+                <li>scroll : 회면 스크롤과 함께 배경 이미지도 스크롤된다.(기본값)</li>
+                <li>fixed : 화면이 스크롤되더라도 배경 이미지는 고정(현재 페이지 적용 중)</li>
+            </ul>
+
+        <h2>background 속성</h2>
+            <ul>
+                <li>배경 관련 속성을 줄여서 표기</li>
+                <li>각 속성 값이 다르므로 표기 순서는 상관없음</li>
+                <li>ex) background:url('url') no-repeat fixed right bottom contain border-box</li>
+            </ul>
+    </body>
+</html>
