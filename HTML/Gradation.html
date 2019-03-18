@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+    <head>
+        <title>그라데이션 효과</title>
+        <style>
+            .linear-gradient-direction-top { border : 1px solid; padding: 20px; background-image : linear-gradient(to top, rgb(128, 128, 219), white) }
+            .linear-gradient-direction-left { border : 1px solid; padding: 20px; background-image : linear-gradient(to left, rgb(128, 128, 219), white) }
+            .linear-gradient-direction-right { border : 1px solid; padding: 20px; background-image : linear-gradient(to right, rgb(128, 128, 219), white) }
+            .linear-gradient-direction-bottom { border : 1px solid; padding: 20px; background-image : linear-gradient(to bottom, rgb(128, 128, 219), white) }
+            .linear-gradient-degree { border : 1px solid; padding: 20px; background-image : linear-gradient(125deg, rgb(128, 128, 219), white)}
+            .linear-gradient-stop-point { border : 1px solid; padding: 20px; background-image : linear-gradient(to top, rgb(128, 128, 219), white 30%, rgb(128, 128, 219))}
+            .radial-gradient-closest-side { border : 1px solid; padding: 50px; background-image : radial-gradient(circle closest-side at 10% 20%, white, rgb(128, 128, 219))}
+            .radial-gradient-closest-corner { border : 1px solid; padding: 50px; background-image : radial-gradient(circle closest-corner at 10% 20%, white, rgb(128, 128, 219))}
+            .radial-gradient-farthest-side { border : 1px solid; padding: 50px; background-image : radial-gradient(circle farthest-side at 10% 20%, white, rgb(128, 128, 219))}
+            .radial-gradient-farthest-corner { border : 1px solid; padding: 50px; background-image : radial-gradient(circle farthest-side at 10% 20%, white, rgb(128, 128, 219))}
+            .radial-gradient-stop-point { border : 1px solid; padding: 50px; background-image : radial-gradient(circle, rgb(128, 128, 219), red 60%, white)}
+            .linear-gradient-repeat { border : 1px solid; padding: 50px;background-image : repeating-linear-gradient(to top, rgb(128, 128, 219), rgb(128, 128, 219) 20%, white 20%, white 40%) }
+            .radial-gradient-repeat { border : 1px solid; padding: 50px;background-image : repeating-radial-gradient(circle, rgb(128, 128, 219), rgb(128, 128, 219) 20%, white 20%, white 40%) }
+        </style>
+    </head>
+    <body>
+        <h2>그라데이션</h2>
+            <ul>
+                <li>그라데이션은 크기가 없는 배경 이미지이므로 background-image나 background 속성에서 사용</li>
+                <li>그라데이션 속성은 표준화 되었으나, 구형 모던 브라우저에서는 접두사를 붙여야 함</li>
+            </ul>
+
+        <h2>선형 그라데이션(linear-gradient)</h2>
+            <ul>
+                <li>수직 방향이나 수평 방향으로, 혹은 대각선 방향으로 색상이 일정하게 변함</li>
+                <li>지정할 때는 방향과 색상 필요</li>
+                <li>ex) background-image : linear-gradient ( 각도 or 방향 키워드, color-stop, [color-stop,..])</li>
+                <ol>
+                    <li>방향</li>
+                        <ul>
+                            <li>[표준 구문] 끝 지점을 기준으로 'to'키워드와 함께 사용</li>
+                                <ul>
+                                    <li class="linear-gradient-direction-top">to top : 아래에서 시작해 위로</li>
+                                    <li class="linear-gradient-direction-left">to left : 오른쪽에서 시작해 왼쪽으로</li>
+                                    <li class="linear-gradient-direction-right">to right : 왼쪽에서 시작해 오른쪽으로</li>
+                                    <li class="linear-gradient-direction-bottom">to bottom : 위에서 시작해 아래로</li>
+                                </ul>
+                            <li>[접두사 구문]</li>
+                                <ul>
+                                    <li>-webkit- : 그라데이션 시작 위치 기준</li>
+                                    <li>-moz- : 그라데이션 끝 위치 기준, 키워드 'to' 사용하지 않음</li>
+                                    <li>-o- : 그라데이션 끝 위치 기준, 키워드 'to' 사용하지 않음</li>
+                                </ul>
+                        </ul>
+                    <li>각도</li>
+                        <ul>
+                            <li>그라데이션이 끝나는 각도</li>
+                            <li>단위는 deg(0(top)부터 시계방향으로 증가)</li>
+                            <li class="linear-gradient-degree">ex) background-image : linear-gradient(125deg, rgb(128, 128, 219), white)</li>
+                        </ul>
+                    <li>색상 중지점</li>
+                        <ul>
+                            <li>색상이 바뀌는 지점</li>
+                            <li>색상만 지정할 수도 있고 색상과 함께 중지점의 위치도 함께 지정할 수도 있음</li>
+                            <li class="linear-gradient-stop-point">ex) background-image : linear-gradient(to top, rgb(128, 128, 219), white 30%, rgb(128, 128, 219))</li>
+                        </ul>
+                </ol>
+            </ul>
+        
+        <h2>원형 그라데이션(radial-gradient)</h2>
+            <ul>
+                <li>원이나 타원의 중심부터 동심원을 그리며 바깥으로 색상이 바뀌는 그라데이션</li>
+                <li>색상이 바뀌기 시작하는 원의 중심과 크기를 지정하고 그라데이션의 모양을 지정해야 함</li>
+                <li>ex) radial-gradient(모양 크기 at 위치, color-stop, [color-stop,..])</li>
+                <ol>
+                    <li>모양</li>
+                        <ul>
+                            <li>원형 그라데이션에서 만들어지는 모양은 circle(원형), ellipse(타원형)</li>
+                            <li>따로 지정하지 않으면 ellipse로 인식</li>
+                        </ul>
+                    <li>위치</li>
+                        <ul>
+                            <li>그라데이션이 시작하는 원의 중심 지정</li>
+                            <li>[표준 구문] : '모양'과 '크기' 속성 다음에 at 키워드와 함께 위치 값 지정</li>
+                            <li>[접두사 구문] : at 키워드 없이 구문의 맨 앞에 위치 값 지정</li>
+                            <li>사용 가능 값 : 키워드(left, center, right 중 하나, top, center, bottom 중 하나)나 백분율</li>
+                        </ul>
+                    <li>크기</li>
+                        <ul>
+                            <li>그라데이션 원의 크기 지정</li>
+                            <li class="radial-gradient-closest-side" style="font-weight: bold">closest-side : [원]그라데이션 가장자리가 그라데이션 중심에서 가장 가까운 요소의 모서리와 만남<br>
+                                [타원] 그라데이션 중심에서 가장 가까운 요소의 수평축이나 수직축과 만남</li>
+                            <li class="radial-gradient-closest-corner" style="font-weight: bold">closest-corner : 그라데이션 가장자리가 그라데이션 중심에서 가장 가까운 요소의 코너에 닿도록 함</li>
+                            <li class="radial-gradient-farthest-side" style="font-weight: bold">farthest-side : [원]그라데이션 가장자리가 그라데이션 중심에서 가장 먼 모서리와 만남<br>
+                                [타원]그라데이션 가장자리가 그라데이션 중심에서 가장 먼 모서리와 만남</li>
+                            <li class="radial-gradient-farthest-corner" style="font-weight: bold">farthest-corner : 그라데이션 가장자리가 그라데이션 중심에서 가장 먼 코너에 닿도록 함. 기본값</li>
+                        </ul>
+                    <li>색상 중지점</li>
+                        <ul>
+                            <li>색상이 바뀌는 지점</li>
+                            <li>색상만 지정할 수도 있고 색상과 함께 중지점의 위치도 함께 지정할 수도 있음</li>
+                            <li class="radial-gradient-stop-point" style="font-weight: bold">ex) background-image : radial-gradient(circle, rgb(128, 128, 219), red 60%, white)</li>
+                        </ul>
+                
+                <h2>그라데이션 반복</h2>
+                        <ul>
+                            <li>단순히 그라데이션을 반복하는 것이 아니라 '패턴'을 만들어 반복</li>
+                            <li class="linear-gradient-repeat" style="font-weight: bold">ex) background-image : repeating-linear-gradient(circle, rgb(128, 128, 219), rgb(128, 128, 219) 20%, white 20%, white 40%)</li>
+                            <li class="radial-gradient-repeat" style="font-weight: bold">ex) background-image : repeating-radial-gradient(circle, rgb(128, 128, 219), rgb(128, 128, 219) 20%, white 20%, white 40%)</li>
+                        </ul>
+                </ol>
+            </ul>
+            
+    </body>
+</html>
