@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+    <head>
+        <title>테두리와 여백</title>
+        <style>
+            .border-style-none { line-height: 2; border : 5px; border-style : none }
+            .border-style-hidden { line-height: 2; border : 5px; border-style : hidden }
+            .border-style-dashed { line-height: 2; border : 5px; border-style : dashed }
+            .border-style-dotted { line-height: 2; border : 5px; border-style : dotted }
+            .border-style-double { line-height: 2; border : 5px; border-style : double }
+            .border-style-groove { line-height: 2; border : 5px; border-style : groove }
+            .border-style-inset { line-height: 2; border : 5px; border-style : inset }
+            .border-style-outset { line-height: 2; border : 5px; border-style : outset }
+            .border-style-ridge { line-height: 2; border : 5px; border-style : ridge }
+            .border-style-solid { line-height: 2; border : 5px; border-style : solid }
+            .border-width-one { border-style: solid; border-width: medium }
+            .border-width-two { border-style : solid; border-width: 1px 10px }
+            .border-width-three { border-style : solid; border-width: 5px 10px 15px } 
+            .border-width-four { border-style : solid; border-width: 5px 10px 15px 20px } 
+            .border-color { border-style : solid; border-width : 5px; border-color : blue}
+            .border-color-two { border-style : solid; border-width : 5px; border-color : green magenta}  
+            .border-color-three { border-style : solid; border-width : 5px; border-color : green magenta yellow}  
+            .border-color-four { border-style : solid; border-width : 5px; border-color : blue yellow green magenta}  
+            .border { border : 5px solid red }
+            .border-radius { border : 5px solid; border-radius : 20px}
+            .border-radius-ellipse { border : 5px solid; border-radius : 5px 10px}
+            .box-shadow { box-shadow : 5px 3px 10px 3px blue }
+            .padding { width : 200px; border : 5px solid; padding : 5px 10px 15px 20px }
+            .margin-one { display : inline-block; margin : 10px }
+            .margin-two { display : inline-block; margin : 10px 20px }
+            .margin-three { display : inline-block; margin : 10px 20px 30px }
+            .margin-four { display : inline-block; margin : 10px 20px 30px 40px }
+        </style>
+    </head>
+    <body>
+        <h2>border-style 속성</h2>
+            <ul>
+                <li>기본값이 none : 화면에 테두리 표시 안됨</li>
+                <li>테두리를 그리기 위해서는 맨 먼저 테두리 스타일부터 지정</li>
+                <li>각 방향별로 지정 가능(border-top-style, border-right-style, border-bottom-style, border-left-style)</li>
+                <li class="border-style-none">none : 기본 값. 테두리가 나타나지 않음</li>
+                <li class="border-style-hidden">hidden : 테두리가 나타나지 않음. border-collapse:collapse 일 경우, 다른 테두리도 표시되지 않음</li>
+                <li class="border-style-dashed">dashed : 테두리를 짧은 선(직선으로 된 점선)으로 표시</li>
+                <li class="border-style-dotted">dotted : 테두리를 점선으로 표시</li>
+                <li class="border-style-double">double : 테두리를 이중선(겹선)으로 표시, 선 사이의 간격은 border-width로 지정</li>
+                <li class="border-style-groove">groove : 테두리를 창에 조각한 것처럼 표시. 홈이 파인듯 입체적으로 보임</li>
+                <li class="border-style-inset">inset : border-collapse:separate 일 경우, 전체 박스 테두리가 창에 박혀 있는 것처럼 표시.<br>
+                    border-collapse:collapse 일 경우, groove와 동일</li>
+                <li class="border-style-outset">outset : border-collapse:separate 일 경우, 전체 박스 테두리가 창에서 튀어나온 것처럼 표시.<br>
+                    border-collapse:collapse 일 경우, ridge와 동일</li>
+                <li class="border-style-ridge">ridge : 테두리를 창에서 튀어나온 것처럼 표시</li>
+                <li class="border-style-solid">solid : 테두리를 실선으로 표현</li>
+            </ul>
+        <h2>border-width 속성</h2>
+            <ul>
+                <li>테두리 두께 지정</li>
+                <li>각 방향별로 지정 가능(border-top-width, border-right-width, border-bottom-width, border-left-width)</li>
+                <li>크기, thin(얇게), medium(중간), thick(두껍게) 사용 가능</li>
+                    <ol>
+                        <li class="border-width-one">속성 값이 1개 : 네 방향에 모두 같은 두께</li>
+                        <li class="border-width-two">속성 값이 2개 : 위아래, 좌우 묶어서</li>
+                        <li class="border-width-three">속성 값이 3개 : top → right → bottom. left 값은 마주보는 변인 right 값으로 지정</li>
+                        <li class="border-width-four">속성 값이 4개 : top → right → bottom → left</li>
+                    </ol>
+            </ul>
+        
+        <h2>border-color 속성</h2>
+            <ul>
+                <li>테두리 색상 지정</li>
+                <li>각 방향별로 지정 가능(border-top-color, border-right-color, border-bottom-color, border-left-color)</li>
+                    <ol>
+                        <li class="border-color">속성 값이 1개 : 네 방향에 모두 같은 두께</li>
+                        <li class="border-color-two">속성 값이 2개 : 위아래, 좌우 묶어서</li>
+                        <li class="border-color-three">속성 값이 3개 : top → right → bottom. left 값은 마주보는 변인 right 값으로 지정</li>
+                        <li class="border-color-four">속성 값이 4개 : top → right → bottom → left</li>
+                    </ol>
+            </ul>
+        
+        <h2>border 속성</h2>
+            <ul>
+                <li>테두리 스타일과 두께, 색상 등을 묶어 표시</li>
+                <li>순서는 상관 없음</li>
+                <li>각 방향별로 지정 가능(border-top, border-right, border-bottom, border-left)</li>
+                <li class="border">ex) border : 5px solid red</li>
+            </ul>
+        
+        <h2>border-radius 속성</h2>
+            <ul>
+                <li>박스 모서리 부분을 둥글게 처리</li>
+                <li>각 모서리 별로 지정 가능(border-top-left-radisu, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius)</li>
+                <li>크기, 백분율 사용 가능</li>
+                <li>가로 반지름 크기, 세로 반지름 크기 지정 시 타원형식</li>
+                <li class="border-radius">ex) border-radius: 20px</li>
+                <li class="border-radius-ellipse">ex) border-radius: 5px 10px</li>
+            </ul>
+
+        <h2>box-shadow 속성</h2>
+            <ul>
+                <li>선택한 요소에 그림자 효과 내기</li>
+                <li>수평 거리 : 그림자의 수평 옵셋 거리(수평으로 얼마나 떨어져 있는지). 양수는 오른쪽, 음수는 왼쪽. 필수 값</li>
+                <li>수직 거리 : 그림자의 수직 옵셋 거리(세로로 얼마나 떨어져 있는지). 양수는 요소의 아래쪽, 음수는 요소의 위쪽. 필수 값</li>
+                <li>흐림 정도 : 그림자의 흐림 정도(blue radius)를 지정. 이 값을 생략하면 0을 기본값으로 해 진한 글미자 표시.<br>
+                    이 값이 커질수록 부드러운 그림자 표시 가능. 음수값 사용 불가</li>
+                <li>번짐 정도 : 그림자의 번지는 정도를 나타냄. 양수는 그림자가 모든 방향으로 퍼져 나가므로 그림자가 박스보다 크게 표시.<br>
+                    음수는 그림자가 모든 방향으로 축소되어 보임. 기본값은 0</li>
+                <li>색상 : 그림자의 색상 지정. 한 가지만 지정 또는 여러개의 색상 지정 가능. 기본값은 현재 글자 색.</li>
+                <li>inset : 이 키워드를 함께 표시하면 안쪽 그림자로 나타남.</li>
+                <li class="box-shadow">ex) box-shadow : 5px 3px 10px 3px blue</li>
+            </ul>
+
+        <h2>padding 속성</h2>
+            <ul>
+                <li>컨텐츠 영역과 테두리 사이의 여백</li>
+                <li>각 방향별로 지정 가능(padding-top, padding-right, padding-bottom, padding-left)</li>
+                <li>크기, 백분율, auto 사용 가능</li>
+                <div class="padding">
+                    ex) padding : 5px 10px 15px 20px
+                </div>
+            </ul>
+        
+        <h2>margin 속성</h2>
+            <ul>
+                <li>현재 요소 주변의 여백</li>
+                <li>마진을 이용하면 요소와 요소 간의 간격 조절 가능</li>
+                <li>각 방향별로 지정 가능(margin-top, margin-right, margin-bottom, margin-left)</li>
+                <li>크기 : 너비나 높이 값을 px이나 cm같은 단위와 함께 수치로 지정</li>
+                <li>백분율 : 박스 모델을 포함하고 있는 부모 요소를 기준으로 너비나 높이 값을 %로 지정></li>
+                <li>auto : display 속성에서 지정한 값에 맞게 적절한 값을 자동으로 지정.</li>
+                <div class="margin-one">ex) margin : 10px</div>
+                <div class="margin-two">ex) margin : 10px 20px</div>
+                <div class="margin-three">ex) margin : 10px 20px 30px</div>
+                <div class="margin-four">ex) margin : 10px 20px 30px 40px</div>
+            </ul>
+    </body>
+</html>
